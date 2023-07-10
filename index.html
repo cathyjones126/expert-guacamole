@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安全指引</title>
+    <!-- 以下为openinstall集成代码，建议在html文档中尽量靠前放置，加快初始化过程 -->
+    <!-- 强烈建议直接引用下面的cdn加速链接，以得到最及时的更新，我们将持续跟踪各种主流浏览器的变化，提供最好的服务；不推荐将此js文件下载到自己的服务器-->
+    <script type="text/javascript" charset="UTF-8" src="https://web.cdn.openinstall.io/openinstall.js"></script>
+    <script type="text/javascript">
+        //OpenInstall初始化时将与openinstall服务器交互，应尽可能早的调用
+        var data = OpenInstall.parseUrlParams();///openinstall.js中提供的工具函数，解析url中的所有查询参数
+        new OpenInstall({
+            appKey: "feelal",
+            onready: function () {
+                var m = this, button = document.getElementById("downloadButton");
+                button.onclick = function () {
+                    m.install({ data: { 'openInstall': '#iPhone#GOjZ3kxlNw9pD0sdP0WZ9eRS8BKzi+lL5kncO2lE5JDQen0JqaYdRc7nUX4HMjF5X8wMnf0Rrx2GC9eQq5kh78VeRoGLzUYE2TLrKRc2kwj4KhtwzV0p/Hj3N0958WIauFxhElkxyahM1iQwhONfqK/H0QLFNZYVMAbGMSov7c6kZFp5kIT1ZIHjYe66xyK9MhdqETMaiKaHoACE0uQZ78/z292KK6pkjCGA7yUAES1srvQvGaJQJsgaKiYcDIdFtyMATuUAnWptlVoS0s8/Zy66QwBN/dAjTuYrS6Pyk6BXDPdt36RW7EwP536cXpPjisSxh1ni3qchHul43bHtlzWktxtWHinCAVW/exO/XqsoYdODfYurnWNH6MO1lKUUDfgJbWd5Wb5gS9ycgaRN956xcGyocd0+hXqLZTD0AJ/VjQJNtCFv1yFEOnlDxFQUiakGvZ3uo6ac4q1EVyCdvbIt2W+Gc1QVrqypdRWW3yB0vah7NB7rdQPqTwL9GRoERq5a4iMCEqo7FgnPgJalRw==#iPhone#' }, channelCode: "AppStore" });//延迟指定绑定参数与渠道编号
+                    return false;
+                }
+            }
+        }, data);
+    </script>
+    <style>
+        .down {
+            background-color: aqua;
+            width: 80%;
+            height: 60px;
+            border-radius: 30px;
+        }
+
+        .desc {
+            margin-top: 15px;
+            color: grey;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="justify-content: center; align-items: center; display: flex; flex-direction: column; margin-top: 20px;">
+        <input class="down" id="downloadButton" type="button" value="前往下载">
+        <div class="desc">
+            <p>简单的测试页面</p>
+            <p>具体对接方式请参考 https://www.openinstall.io/ 官网</p>
+        </div>
+    </div>
+</body>
+
+</html>
